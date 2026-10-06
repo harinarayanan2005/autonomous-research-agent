@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AutoResearch Agent — Comprehensive Technical Dossier & Interview Guide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    @page {
+      size: A4;
+      margin: 15mm 15mm 15mm 15mm;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0f172a;
+      line-height: 1.6;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 24px;
+      font-size: 10.5pt;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3, h4 {
+      color: #0f172a;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 20pt;
+      border-bottom: 2pt solid #0f172a;
+      padding-bottom: 8pt;
+      margin-bottom: 12pt;
+    }
+
+    h2 {
+      font-size: 14pt;
+      margin-top: 18pt;
+      margin-bottom: 8pt;
+      color: #1e293b;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4pt;
+    }
+
+    h3 {
+      font-size: 12pt;
+      margin-top: 12pt;
+      margin-bottom: 6pt;
+      color: #334155;
+    }
+
+    p {
+      margin-bottom: 8pt;
+      text-align: justify;
+    }
+
+    .meta-box {
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10pt;
+      margin-bottom: 16pt;
+      font-size: 9.5pt;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6pt;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: #f1f5f9;
+      color: #0284c7;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 9pt;
+    }
+
+    pre {
+      background-color: #0f172a;
+      color: #f8fafc;
+      padding: 12pt;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5pt;
+      line-height: 1.45;
+      overflow-x: auto;
+      margin: 8pt 0 12pt 0;
+    }
+
+    pre code {
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10pt 0;
+      font-size: 9.5pt;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6pt 10pt;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    .interview-q {
+      background-color: #eff6ff;
+      border-left: 3.5pt solid #3b82f6;
+      padding: 8pt 12pt;
+      margin: 12pt 0 6pt 0;
+      font-weight: 600;
+      color: #1e3a8a;
+    }
+
+    .interview-a {
+      padding-left: 14pt;
+      margin-bottom: 14pt;
+    }
+
+    ul, ol {
+      margin-top: 4pt;
+      margin-bottom: 8pt;
+      padding-left: 18pt;
+    }
+
+    li {
+      margin-bottom: 3pt;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 6px;
+      font-size: 8pt;
+      font-weight: 600;
+      border-radius: 4px;
+      background-color: #e2e8f0;
+      color: #334155;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        font-size: 10pt;
+      }
+      .no-print {
+        display: none;
+      }
+      h2 {
+        page-break-after: avoid;
+      }
+      pre, table {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AutoResearch Agent: Technical Dossier & Architectural Reference</h1>
+
+    <div class="meta-box">
+      <div class="meta-grid">
+        <div><strong>Project Title:</strong> AutoResearch Agent</div>
+        <div><strong>Architecture:</strong> ReAct (Reasoning + Acting) Agentic Loop</div>
+        <div><strong>Frontend:</strong> React 19 (Vite), Recharts, Bootstrap 5</div>
+        <div><strong>Backend:</strong> Django 5, Django REST Framework</div>
+        <div><strong>Streaming Protocol:</strong> Server-Sent Events (SSE / HTTP Streaming)</div>
+        <div><strong>Model / AI Engine:</strong> Google Gemini 3.5 Flash Lite</div>
+        <div><strong>Autonomous Tools:</strong> DuckDuckGo Search API, BeautifulSoup4 Scraper</div>
+        <div><strong>Database Engine:</strong> Relational SQLite (PostgreSQL Ready)</div>
+      </div>
+    </div>
+
+    <h2>1. Executive Summary & Project Purpose</h2>
+    <p>
+      Traditional Large Language Model (LLM) applications suffer from two critical flaws: <strong>static cutoff knowledge</strong> and <strong>hallucination</strong>. Most beginner portfolio applications simply wrap an LLM prompt inside an API endpoint, returning pre-trained text without validation.
+    </p>
+    <p>
+      <strong>AutoResearch Agent</strong> is a full-stack, production-grade <strong>Agentic AI</strong> platform. Rather than guessing answers, the system initiates an autonomous <strong>ReAct (Reasoning + Acting) loop</strong>: it dynamically formulates a hypothesis, issues live web search queries to DuckDuckGo, extracts and scrapes web page content, evaluates the observations, iteratively refines its search trajectory, and compiles an executive intelligence dossier accompanied by quantitative benchmark metric charts.
+    </p>
+
+    <h2>2. System Architecture & Information Flow</h2>
+    <pre><code>[ React Client (Vite + Recharts + SSE) ]
+                   │
+                   │  1. POST /api/sessions/ (Topic, Depth, Persona)
+                   ▼
+[ Django Backend (Orchestration Engine) ]
+   ├── Background Execution Thread (run_research_agent)
+   │     ├── Gemini 3.5 Flash Lite (Formulates Thought & Chooses Action)
+   │     ├── Tool Sandbox (DuckDuckGo Search OR BeautifulSoup Scraper)
+   │     └── Loop Controller (Up to N iterations with 429/503 backoff)
+   │
+   ├── Database Persistence (Django ORM)
+   │     ├── ResearchSession (Topic, Status, Final Report, Metrics JSON)
+   │     └── AgentStep (Thought, Action, Action_Input, Observation)
+   │
+   └── Server-Sent Events (SSE) Stream
+         │  2. GET /api/sessions/{id}/stream/ (Content-Type: text/event-stream)
+         ▼
+[ Real-Time UI Render (Zero Polling Lag) ]
+   ├── Live Cognitive Trace Timeline
+   ├── Quantitative Metric Bar Chart (Recharts)
+   ├── Clickable Verified Sources with Favicons
+   └── Interactive Follow-up Grounded Q&A Drawer</code></pre>
+
+    <h2>3. Core Technical Features</h2>
+
+    <h3>A. Autonomous ReAct Orchestration Engine</h3>
+    <p>
+      Implemented in <code>agent_core/agent_engine.py</code>, the agent follows the landmark academic ReAct pattern:
+    </p>
+    <ul>
+      <li><strong>Thought:</strong> The agent articulates its internal rationale regarding what information is missing.</li>
+      <li><strong>Action:</strong> It decides which tool to invoke: <code>search_web</code> or <code>scrape_page</code>.</li>
+      <li><strong>Action Input:</strong> It generates the exact search query or URL target.</li>
+      <li><strong>Observation:</strong> The tool runs in a sandboxed Python function and returns the live web output.</li>
+      <li><strong>Iteration:</strong> The observation is appended into the conversational context for the next decision cycle.</li>
+    </ul>
+
+    <h3>B. Real-Time Streaming via Server-Sent Events (SSE)</h3>
+    <p>
+      Unlike traditional applications that poll the server every few seconds (generating high network overhead and latency), AutoResearch uses a persistent unidirectional HTTP stream via Django's <code>StreamingHttpResponse</code>. As the agent completes individual reasoning steps, events are pushed immediately to the browser using the native W3C <code>EventSource</code> API.
+    </p>
+
+    <h3>C. Dual-Payload Structured Generation (Metrics + Dossier)</h3>
+    <p>
+      The LLM does not merely return unstructured prose. During synthesis, it outputs a dual payload:
+    </p>
+    <ol>
+      <li><strong>Quantitative Benchmarks:</strong> A structured JSON array of scored dimensions (e.g., <em>Performance, Cost-Efficiency, Context Window</em>) scaled 1–100. This data binds dynamically to an interactive <strong>Recharts Bar Component</strong>.</li>
+      <li><strong>Executive Dossier:</strong> A comprehensive Markdown brief containing Executive Summaries, Technological Pillars, Comparative Matrices, and Sources.</li>
+    </ol>
+
+    <h3>D. Grounded Follow-Up Q&A ("Chat with Dossier")</h3>
+    <p>
+      Users can interrogate the generated research through a follow-up drawer. The backend takes the user's question, injects the compiled report and all raw web observation telemetry into the prompt, and enforces strict grounding to ensure zero hallucinated answers.
+    </p>
+
+    <h3>E. Side-by-Side Dual Matrix Comparison Mode</h3>
+    <p>
+      A dedicated multi-session view allowing users to select any two past research dossiers and inspect their visual benchmark charts and executive summaries simultaneously.
+    </p>
+
+    <h3>F. Multi-Page Boxed PDF Export Engine</h3>
+    <p>
+      Utilizes CSS Paged Media standards (<code>@page</code>, <code>position: fixed</code> border cloning, <code>orphans/widows</code> control) to generate a formal, multi-page Microsoft Word-style bordered whitepaper with zero third-party PDF server dependencies.
+
+    <h2>4. Database Schema Design</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="4"><strong>ResearchSession</strong></td>
+          <td><code>id</code></td>
+          <td>UUIDField</td>
+          <td>Primary key generated using <code>uuid.uuid4</code>.</td>
+        </tr>
+        <tr>
+          <td><code>topic</code></td>
+          <td>CharField(500)</td>
+          <td>Target research thesis or query.</td>
+        </tr>
+        <tr>
+          <td><code>status</code></td>
+          <td>CharField(20)</td>
+          <td>Lifecycle state: <code>PENDING</code>, <code>RUNNING</code>, <code>COMPLETED</code>, <code>FAILED</code>.</td>
+        </tr>
+        <tr>
+          <td><code>final_report</code></td>
+          <td>TextField</td>
+          <td>Compiled Markdown dossier and embedded benchmark metric JSON.</td>
+        </tr>
+        <tr>
+          <td rowspan="5"><strong>AgentStep</strong></td>
+          <td><code>session</code></td>
+          <td>ForeignKey</td>
+          <td>Links step to parent <code>ResearchSession</code> (Cascade delete).</td>
+        </tr>
+        <tr>
+          <td><code>step_number</code></td>
+          <td>PositiveIntegerField</td>
+          <td>Order of execution in the ReAct sequence.</td>
+        </tr>
+        <tr>
+          <td><code>thought</code></td>
+          <td>TextField</td>
+          <td>Internal cognitive reasoning of the agent.</td>
+        </tr>
+        <tr>
+          <td><code>action</code></td>
+          <td>CharField(100)</td>
+          <td>Tool name invoked (<code>search_web</code>, <code>scrape_page</code>, <code>finish</code>).</td>
+        </tr>
+        <tr>
+          <td><code>observation</code></td>
+          <td>TextField</td>
+          <td>Raw telemetry data received from the web tool.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. Technical Interview Questions & Model Answers</h2>
+
+    <div class="interview-q">Q1: How does your application differ from a typical ChatGPT or Gemini wrapper?</div>
+    <div class="interview-a">
+      "A wrapper simply takes a user prompt, forwards it directly to an LLM API, and displays the response. It cannot access new information and frequently hallucinates. My application implements an autonomous <strong>ReAct (Reasoning + Acting) loop</strong>: the agent has external agency. It formulates search strategies, calls DuckDuckGo and web-scraping tools, reads intermediate results, iteratively refines its search trajectory, and saves an immutable audit trail of its decisions into a relational database."
+    </div>
+
+    <div class="interview-q">Q2: Why did you choose Server-Sent Events (SSE) over WebSockets?</div>
+    <div class="interview-a">
+      "WebSockets provide full-duplex, bidirectional communication over a dedicated TCP connection, which is ideal for multiplayer games or collaborative whiteboards. However, an AI research agent only streams data in one direction—from server to client. Server-Sent Events (SSE) operate over standard HTTP, require zero protocol-upgrade handshakes, traverse corporate firewalls cleanly, and include automatic connection re-establishment natively built into the browser's <code>EventSource</code> API. It is lighter and architecturally tailored for LLM token and step streaming."
+    </div>
+
+    <div class="interview-q">Q3: How did you handle API rate limits (HTTP 429) and high-demand spikes (HTTP 503)?</div>
+    <div class="interview-a">
+      "I engineered an automated exponential backoff retry decorator in <code>agent_core/agent_engine.py</code>. When Google AI Studio returns a 429 Resource Exhausted or 503 Temporary Spike error, the engine intercepts the exception, dynamically calculates a backoff sleep interval, and retries the request up to four times before falling back to graceful local synthesis. Additionally, the agent loop executes in an asynchronous Python background thread, ensuring that slow tool calls or rate limits never freeze the Django HTTP request/response cycle."
+    </div>
+
+    <div class="interview-q">Q4: How do you prevent hallucination during the follow-up Q&A chat?</div>
+    <div class="interview-a">
+      "I implemented strict <strong>Retrieval Grounding</strong>. When a user asks a follow-up question, the backend queries the database for all recorded <code>AgentStep</code> observations and the synthesized report. These verified web snippets are injected directly into the LLM system prompt as context, with an explicit constraint instructing the model to answer exclusively from the provided observations and state if an answer cannot be verified from the data."
+    </div>
+
+    <h2>6. Resume Bullets (Ready to Paste)</h2>
+    <ul>
+      <li><strong>Full-Stack Architecture:</strong> Architected an autonomous research intelligence platform using React 19, Bootstrap 5, and Django REST Framework, orchestrating multi-step ReAct loops via Google Gemini 3.5 Flash Lite.</li>
+      <li><strong>Tool Integration & Web Crawling:</strong> Built autonomous Python tool sandboxes integrating DuckDuckGo Search API and BeautifulSoup4, enabling real-time live web browsing and content extraction.</li>
+      <li><strong>Real-Time Streaming:</strong> Replaced interval-based polling with Server-Sent Events (SSE) via Django's <code>StreamingHttpResponse</code> and React's <code>EventSource</code>, streaming live agent cognitive steps with zero network overhead.</li>
+      <li><strong>Data Visualization & Export:</strong> Engineered dual-payload structured LLM parsing to bind benchmark scores to interactive Recharts bar components, complemented by a multi-page bordered Word-style PDF export engine.</li>
+      <li><strong>Contextual Grounding:</strong> Developed a follow-up conversational Q&A system grounded strictly in raw session observations to eliminate model hallucinations.</li>
+    </ul>
+  </div>
+</body>
+</html>
