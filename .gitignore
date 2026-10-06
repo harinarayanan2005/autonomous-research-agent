@@ -20,6 +20,12 @@ yarn-debug.log*
 yarn-error.log*
 .eslintcache
 
+# Personal / Local Documentation & Exports (Not committed to Git)
+*.pdf
+*.docx
+AutoResearch_Agent_Technical_Dossier.*
+PROJECT_DOCUMENTATION.*
+
 # IDE / System
 .vscode/
 .idea/

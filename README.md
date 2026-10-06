@@ -1,104 +1,47 @@
-# ⚡ AutoResearch Agent — Full-Stack Autonomous Intelligence Platform
+# AutoResearch Agent
 
-An enterprise-grade, autonomous ReAct (Reasoning + Acting) Agentic AI application built with **React 19**, **Bootstrap 5**, **Recharts**, and **Django REST Framework**, powered by **Google Gemini 3.5 Flash Lite**.
-
----
-
-## 🚀 Key Features
-
-- **Autonomous ReAct Agent Loop**: Iteratively reasons, plans, and selects external actions (DuckDuckGo web searches, BeautifulSoup4 web page scraping) before synthesizing final reports.
-- **Server-Sent Events (SSE) Live Streaming**: Real-time push of cognitive agent steps (`thought`, `action`, `observation`) using Django's `StreamingHttpResponse` and the browser `EventSource` API.
-- **Dynamic Benchmark Visualization**: Automatic LLM metric extraction converted directly into high-contrast interactive bar charts via `Recharts`.
-- **Retrieval-Grounded Follow-Up Q&A**: Contextual drawer enabling users to ask follow-up questions strictly grounded in scraped session observations, preventing hallucinations.
-- **Dual-Matrix Comparison Mode**: Side-by-side comparison interface for contrasting multiple research session reports and benchmark metrics simultaneously.
-- **Word-Style Multi-Page PDF Export**: Engineered `@media print` CSS engine with fixed positioning frames ensuring clean, closed borders across every single exported page.
-- **Industrial Monolith High-Contrast UI**: Obsidian/slate theme designed with strict WCAG contrast standards, toggleable between Dark and Light mode without breaking component visibility.
+An autonomous research platform that formulates search strategies, browses the web, extracts relevant data, and synthesizes structured research dossiers with benchmark charts in real time.
 
 ---
 
-## 🛠️ Architecture & Tech Stack
+## Overview
 
-```mermaid
-graph TD
-    Client["React 19 Frontend (Vite, Bootstrap 5, Recharts)"]
-    SSE["SSE Stream (/sessions/ID/stream/)"]
-    REST["REST Endpoints (/api/sessions/)"]
-    Django["Django REST Framework 5"]
-    DB[(SQLite3 Relational DB)]
-    Engine["ReAct Agent Engine (Threaded)"]
-    Gemini["Google Gemini 3.5 Flash Lite"]
-    DDG["DuckDuckGo Search Tool"]
-    Scraper["BeautifulSoup4 Web Scraper"]
-
-    Client -->|EventSource| SSE
-    Client -->|Axios REST| REST
-    SSE --> Django
-    REST --> Django
-    Django --> DB
-    Django --> Engine
-    Engine --> Gemini
-    Engine --> DDG
-    Engine --> Scraper
-    Engine --> DB
-```
-
-- **Frontend**: React 19, Vite, Bootstrap 5, Bootstrap Icons, Recharts, React-Markdown, Axios.
-- **Backend**: Django 5.x, Django REST Framework, Django-CORS-Headers, SQLite.
-- **Agent Intelligence**: Google Gemini 3.5 Flash Lite (`google-genai` SDK), custom ReAct execution loop, exponential backoff retries (429/503 mitigation).
-- **Tools**: DuckDuckGo Search (`duckduckgo_search`), Web Scraper (`beautifulsoup4` + `requests`).
+AutoResearch Agent is a full-stack AI research system built to move beyond static, single-prompt conversational wrappers. It employs an autonomous **ReAct (Reasoning + Acting)** execution pattern where the agent reasons about what information is missing, invokes external search and scraping tools, inspects intermediate results, and iteratively compiles comprehensive intelligence reports.
 
 ---
 
-## 📦 Setup & Installation
+## Architecture & Features
 
-### 1. Prerequisites
-- Python 3.10+
-- Node.js 18+ & npm
-- Google Gemini API Key ([Get it from Google AI Studio](https://aistudio.google.com/))
+### 1. Autonomous ReAct Agent Loop
+- Operates a multi-step cognitive loop: **Thought** -> **Action** -> **Observation** -> **Synthesis**.
+- Equips the language model with external capabilities:
+  - **Web Search**: Queries real-time information via DuckDuckGo.
+  - **Page Scraper**: Deep extracts clean readable text from selected URLs using BeautifulSoup4.
+- Automated error recovery and exponential backoff retry handling for API stability.
 
-### 2. Backend Setup
-```bash
-# Clone the repository
-git clone https://github.com/<your-username>/research-agent-fullstack.git
-cd research-agent-fullstack
+### 2. Real-Time Telemetry via Server-Sent Events (SSE)
+- Streams agent cognitive traces directly to the client as they occur.
+- Implemented using HTTP `StreamingHttpResponse` on Django and the native `EventSource` API on React for lightweight, unidirectional real-time data flow.
 
-# Activate virtual environment
-# Windows:
-.\venv\Scripts\Activate.ps1
-# Linux/macOS:
-source venv/bin/activate
+### 3. Quantitative Benchmarking & Visualizations
+- Synthesizes comparative metric ratings alongside qualitative research text.
+- Automatically renders dynamic metric bar charts using **Recharts**.
 
-# Install dependencies
-pip install django djangorestframework django-cors-headers requests beautifulsoup4 duckduckgo-search python-dotenv google-genai
+### 4. Grounded Follow-Up Inquiries
+- Interactive Q&A chat drawer allowing users to interrogate research findings.
+- Uses strict **Retrieval Grounding** on session observations to eliminate model hallucinations.
 
-# Configure environment variables
-copy .env.example .env
-# Edit .env and insert your GEMINI_API_KEY
+### 5. Dual-Session Matrix Comparison
+- Side-by-side comparison workspace allowing instant contrast of findings, methodology, and metrics across different research sessions.
 
-# Run database migrations
-python manage.py migrate
-
-# Start backend server
-python manage.py runserver
-```
-Backend runs at: `http://127.0.0.1:8000/`
-
-### 3. Frontend Setup
-```bash
-cd frontend
-
-# Install dependencies
-npm install
-
-# Start Vite dev server
-npm run dev
-```
-Frontend runs at: `http://localhost:5173/`
+### 6. Clean Multi-Page Document Export
+- Built-in multi-page print stylesheet formatted with continuous borders and report layouts for saving directly as PDF.
 
 ---
 
-## 📄 Documentation & Interview Preparation Guide
+## Tech Stack
 
-A technical dossier and interview defense guide is provided directly in the root directory:
-- **`PROJECT_DOCUMENTATION.md`**: Full Markdown guide detailing architecture, schema, SSE vs WebSocket trade-offs, and resume bullet points.
-- **`PROJECT_DOCUMENTATION.html`**: Formatted document. Open this file in Google Chrome / Edge and press `Ctrl + P` to save a clean PDF.
+- **Frontend:** React 19, Vite, Bootstrap 5, Recharts, React-Markdown, Axios
+- **Backend:** Django 5.x, Django REST Framework, Django-CORS-Headers, SQLite
+- **LLM Engine:** Google Gemini (`google-genai` SDK)
+- **Web Tools:** DuckDuckGo Search API, BeautifulSoup4, Requests
